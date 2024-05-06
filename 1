@@ -1,35 +1,21 @@
 import pandas as pd
-# Add other libraries as needed
-# Assuming you've downloaded the dataset as 'titanic.csv'
+
 df = pd.read_csv('titanic.csv')
-# Check for missing values
+
 print(df.isnull().sum())
 
-# Get initial statistics
+
 print(df.describe())
 
-# Variable descriptions
-# Survived: Whether the passenger survived or not (0 = No, 1 = Yes)
-# Pclass: Ticket class (1 = 1st, 2 = 2nd, 3 = 3rd)
-# Name: Passenger's name
-# Sex: Passenger's sex
-# Age: Passenger's age
-# SibSp: Number of siblings/spouses aboard the Titanic
-# Parch: Number of parents/children aboard the Titanic
-# Ticket: Ticket number
-# Fare: Passenger fare
-# Cabin: Cabin number
-# Embarked: Port of embarkation (C = Cherbourg, Q = Queenstown, S = Southampton)
 
-# Check dimensions of the DataFrame
+
+
 print(df.shape)
-# Check data types
+
 print(df.dtypes)
 
-# Convert data types if needed
-# For example, if 'Age' should be integer:
+
 df['Age'] = df['Age'].astype(int)
-# Similarly, you can convert other variables to appropriate data types
-# Convert categorical variables to quantitative variables using one-hot encoding
+
 df = pd.get_dummies(df, columns=['Sex', 'Embarked'])
-# This will create binary columns for 'Sex' and 'Embarked' categories
+
