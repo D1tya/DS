@@ -32,3 +32,18 @@ print("\nStemming:")
 print(stemmed_tokens)
 print("\nLemmatization:")
 print(lemmatized_tokens)
+
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+documents = [
+    
+]
+
+tfidf_vectorizer = TfidfVectorizer()
+
+tfidf_matrix = tfidf_vectorizer.fit_transform(documents)
+
+print("TF-IDF Representation:")
+print(tfidf_matrix.toarray())
+
